@@ -9,20 +9,25 @@ body {
 	margin: 1rem;
 	background-color: black;
 	color: whitesmoke;
-	font-size: 5rem;
+	font-size: 2.5rem;
 	overflow: hidden;
-	background-image: url(../img/flames.gif);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+	background-image: url(../img/blue\ moon.gif), url(../img/stars.gif);
+	background-repeat: no-repeat, repeat;
+	background-position: center, left top;
+	background-size: 800px 800px;
+}
+
+img{
+  width: 120px;
+  height: auto;
 }
 
 .grid-container {
 	display: grid;
-	/* grid-template-columns: 1fr, 1fr, 1fr; */
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 2rem;
-	margin: 10% 4rem 0 4rem;
+	grid-template-columns: repeat(4, 280px);
+	justify-content: center;
+	gap: 8rem;
+	margin: 9% 4rem 0 6rem;
 }
 
 div {
@@ -30,28 +35,24 @@ div {
 	transition-duration: 3s;
 }
 
-.last {
-	padding-bottom: 2rem;
-	border-bottom: 2px solid rgb(220, 200, 180);
+.word {
+	animation: fade 12s infinite;
 }
 
-/*
-.last:hover {
-	animation-name: growAndGlow;
-	animation-duration: 7s;
-}
-*/
+.word:nth-child(1) { animation-delay: 0s; }
+.word:nth-child(2) { animation-delay: 1s; }
+.word:nth-child(3) { animation-delay: 2s; }
+.word:nth-child(4) { animation-delay: 3s; }
 
-@keyframes growAndGlow {
-	from {
-		color: whitesmoke;
-	}
-	50% {
-		color: dodgerblue;
-		transform: skewX(30deg);
-	}
-	to {
-		transform: scale(3);
-		color: red;
-	}
+@keyframes fade {
+	0% { opacity: 1; }
+	40% { opacity: 0; }
+	60% { opacity: 0;}
+	100% { opacity: 1; }
+}
+
+@keyframes fadeGlow {
+	0% { opacity: 1; color: whitesmoke; }
+	50% { opacity: 0; color: dodgerblue; }
+  	100% { opacity: 1; color: white; }
 }
