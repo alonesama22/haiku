@@ -32,11 +32,11 @@ img{
 
 div {
 	transition-property: transform;
-	transition-duration: 3s;
+	transition-duration: 8s;
 }
 
 .word {
-	animation: fade 6s infinite;
+	animation: fade 10s infinite;
 }
 
 .delay-1 { animation-delay: 0s; }
@@ -55,4 +55,29 @@ div {
 	0% { opacity: 1; color: whitesmoke; }
 	50% { opacity: 0; color: dodgerblue; }
   	100% { opacity: 1; color: white; }
+}
+
+.last {
+	padding-bottom: 1rem;
+} 
+
+.last:hover {
+	animation-name: glowAndGlow;
+	animation-duration: 2s;
+}
+
+@keyframes growAndGlow {
+	from {
+		color: whitesmoke;
+	}
+
+	50% {
+		color: white;
+		transform: skewX(30deg);
+	}
+
+	to {
+		color: red;
+		transform: skewX(30deg);
+	}
 }
